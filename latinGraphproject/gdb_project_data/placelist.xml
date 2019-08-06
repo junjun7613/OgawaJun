@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<listPlace xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+   <xi:include href="placelist.xml"/>
+   <place xml:id="Aix-les-Bains">
+      <placeName type="vicus" source="http://dare.ht.lu.se/places/7976.html">vicus Aquensis</placeName>
+      <trait ana="#Vienne" type="belongs_to" subtype="plac"></trait>
+   </place>
+   <place xml:id="Albens">
+      <placeName type="vicus" source="http://dare.ht.lu.se/places/11116.html">Albinnum</placeName>
+      <trait ana="#Vienne" type="belongs_to" subtype="plac"></trait>
+   </place>
+   <place xml:id="Geneve">
+      <placeName type="vicus" source="http://dare.ht.lu.se/places/22.html">vicus Geneva</placeName>
+      <trait ana="#Vienne" type="belongs_to" subtype="plac"></trait>
+   </place>
+   <place xml:id="Vienne">
+      <placeName type="colonia" source="http://dare.ht.lu.se/places/106.html">Col. Vienna</placeName>
+   </place>
+</listPlace>

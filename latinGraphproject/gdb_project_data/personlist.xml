@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<listPerson xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+   <xi:include href="placelist.xml"/>
+   <person xml:id="Zmertuccius_Titianus">
+      <persName>Zmertuccius Titianus</persName>
+      <trait ana="#Aix-les-Bains" type="patron_of" subtype="plac"/>
+   </person>
+   <person xml:id="Zmertuccius_Titius">
+      <persName>Zmertuccius Titius</persName>
+      <trait ana="#Zmertuccius_Titianus" type="son_of" subtype="pers"/>
+      <trait ana="#Aix-les-Bains" type="administrator_of" subtype="plac"/>
+   </person>
+   <person xml:id="C_Sennius_Sabinus">
+      <persName>Caius Sennius Sabinus</persName>
+      <trait ana="#Albens" type="patron_of" subtype="plac"/>
+      <trait ana="#Geneve" type="patron_of" subtype="plac"/>
+      <trait ana="#Vienne" type="administrator_of" subtype="plac"/>
+   </person>
+</listPerson>

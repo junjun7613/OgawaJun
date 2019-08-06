@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.stoa.org/epidoc/schema/latest/tei-epidoc.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.stoa.org/epidoc/schema/latest/tei-epidoc.rng" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" xml:space="preserve" xml:lang="en">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>CIL 12,2493</title>
+            </titleStmt>
+            <publicationStmt>
+                <authority/>
+                <idno type="filename"/>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <repository>museum/archive</repository>
+                        <idno>inventory number</idno>
+                    </msIdentifier>
+                    <physDesc>
+                        <objectDesc>
+                            <supportDesc>
+                                <support>
+                                    <objectType>stone plate</objectType>
+                                    <material>marble</material>
+                                    <dimensions unit="cm">
+                                        <height>73</height>
+                                        <width>230</width>
+                                    </dimensions>
+                                </support>
+                            </supportDesc>
+                            <layoutDesc>
+                                <layout>description of text field/campus</layout>
+                            </layoutDesc>
+                        </objectDesc>
+                        <handDesc>
+                            <handNote>description of letters, possibly including <height>letter-heights</height>
+                            </handNote>
+                        </handDesc>
+                    </physDesc>
+                    <history>
+                        <origin>
+                            <origPlace>
+                                <placeName nymRef="#Albens">Albens</placeName>
+                            </origPlace>
+                            <origDate>Date of origin</origDate>
+                        </origin>
+                        <provenance type="found"> Findspot and circumstances/context
+                        </provenance>
+                        <provenance type="observed">Modern location(s) (if different from repository, above)
+                        </provenance>
+                    </history>
+                </msDesc>
+                <xi:include href="personlist.xml"/>
+                <xi:include href="placelist.xml"/>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <surfaceGrp facs="https://diyhistory.org/public/ogawa/iiif/27/manifest">
+    <surface url="https://diyhistory.org/public/ogawa/iiif/27/canvas/p1">
+    <graphic url="https://diyhistory.org/public/ogawa/iiif-img/9/full/full/0/default.jpg"/>
+    <zone xml:id="zone_wf2_tyk_hhb" lry="74" lrx="697" uly="28" ulx="38"/>
+    <zone xml:id="zone_rjz_wyk_hhb" lry="118" lrx="701" uly="75" ulx="29"/>
+    <zone xml:id="zone_bs3_zyk_hhb" lry="167" lrx="710" uly="119" ulx="25"/>
+    <zone xml:id="zone_nfj_czk_hhb" lry="215" lrx="714" uly="168" ulx="24"/>
+</surface></surfaceGrp>
+</facsimile>
+    <text>
+        <body>
+            <div type="edition" xml:space="preserve">
+                <ab>
+                    <lb n="1" facs="#zone_p4w_qbl_hhb"/>
+                    <persName nymRef="#C_Sennius_Sabinus"><expan><abbr>C</abbr><ex>aius</ex></expan> Sennius</persName>, <expan><abbr>C</abbr><ex>ai</ex></expan><expan><abbr>f</abbr><ex>ilius</ex></expan>, <expan><abbr>Vol</abbr><ex>tinia</ex></expan>, <persName nymRef="#C_Sennius_Sabinus">Sabinus</persName><expan><abbr>pr<supplied reason="lost">aef</supplied></abbr>
+                    <ex>ectus</ex></expan><expan><abbr><supplied reason="lost">fabr</supplied></abbr><ex>um</ex></expan><supplied reason="lost">,</supplied>
+                    <lb n="2" break="no" facs="#zone_eyc_sbl_hhb"/>
+                    balineum, campum, porticus, aq<supplied reason="lost">uasiusque</supplied>
+                    <lb n="3" facs="#zone_ynf_tbl_hhb"/>
+                    earum aquarum tubo ducendarum <supplied reason="lost">ita ut recte</supplied>
+                    <lb n="4" break="no" facs="#zone_swv_5bl_hhb"/>
+                    perfluere possint, uicanis <placeName nymRef="#Albinnum">Albinnen</placeName><supplied reason="lost">sibus <expan><abbr>d</abbr><ex>e</ex></expan><expan><abbr>s</abbr><ex>uo</ex></expan><expan><abbr>d</abbr><ex>edit</ex></expan>.</supplied>
+                </ab>
+            </div>
+            <div type="apparatus">
+                <p>external apparatus criticus (if applicable)</p>
+            </div>
+            <div type="translation">
+                <p>translation(s)</p>
+            </div>
+            <div type="commentary">
+                <p>commentary</p>
+            </div>
+            <div type="bibliography">
+                <p>bibliography of previous editions, discussion, etc.</p>
+            </div>
+        </body>
+    </text>
+</TEI>

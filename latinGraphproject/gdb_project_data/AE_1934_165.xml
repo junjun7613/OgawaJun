@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.stoa.org/epidoc/schema/latest/tei-epidoc.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.stoa.org/epidoc/schema/latest/tei-epidoc.rng" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" xml:space="preserve" xml:lang="en">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>AE 1934,165</title>
+            </titleStmt>
+            <publicationStmt>
+                <authority/>
+                <idno type="filename"/>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <repository>museum/archive</repository>
+                        <idno>inventory number</idno>
+                    </msIdentifier>
+                    <physDesc>
+                        <objectDesc>
+                            <supportDesc>
+                                <support>
+                                    <objectType>stone plate</objectType>
+                                    <material>marble</material>
+                                    <dimensions unit="cm">
+                                        <height>42.5</height>
+                                        <width>31.8</width>
+                                        <depth>18</depth>
+                                    </dimensions>
+                                </support>
+                            </supportDesc>
+                            <layoutDesc>
+                                <layout>description of text field/campus</layout>
+                            </layoutDesc>
+                        </objectDesc>
+                        <handDesc>
+                            <handNote>description of letters, possibly including <height>letter-heights</height>
+                            </handNote>
+                        </handDesc>
+                    </physDesc>
+                    <history>
+                        <origin>
+                            <origPlace>
+                                <placeName nymRef="#Aix-les-Bains">Aix-les-Bains</placeName>
+                            </origPlace>
+                            <origDate>Date of origin</origDate>
+                        </origin>
+                        <provenance type="found"> Findspot and circumstances/context
+                        </provenance>
+                        <provenance type="observed">Modern location(s) (if different from repository, above)
+                        </provenance>
+                    </history>
+                </msDesc>
+                <xi:include href="personlist.xml"/>
+                <xi:include href="placelist.xml"/>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <surface lry="280" lrx="400" uly="20" ulx="50">
+    <graphic url="https://diyhistory.org/public/ogawa/iiif-img/11/full/full/0/default.jpg"/>
+    <zone xml:id="zone_hbw_chl_hhb" lry="66" lrx="403" uly="26" ulx="45"/>
+    <zone xml:id="zone_pgv_2hl_hhb" lry="108" lrx="418" uly="67" ulx="29"/>
+    <zone xml:id="zone_sh5_fhl_hhb" lry="159" lrx="419" uly="110" ulx="31"/>
+    <zone xml:id="zone_gkp_hhl_hhb" lry="212" lrx="418" uly="161" ulx="35"/>
+    <zone xml:id="zone_err_3hl_hhb" lry="258" lrx="427" uly="212" ulx="23"/>
+    <zone xml:id="zone_e2t_jhl_hhb" lry="306" lrx="414" uly="261" ulx="27"/>
+    <zone xml:id="zone_a3c_lhl_hhb" lry="360" lrx="413" uly="308" ulx="28"/>
+    <zone xml:id="zone_acl_mhl_hhb" lry="408" lrx="411" uly="360" ulx="23"/>
+    <zone xml:id="zone_nlj_nhl_hhb" lry="461" lrx="418" uly="408" ulx="12"/>
+    <zone xml:id="zone_a4r_4hl_hhb" lry="510" lrx="325" uly="461" ulx="90"/>
+</surface>
+    </facsimile>
+    <text>
+        <body>
+            <div type="edition" xml:space="preserve">
+                <ab>
+                    <lb n="1" facs="#zone_hbw_chl_hhb"/>
+                    <supplied reason="lost">decemlecti posse</supplied>sso<supplied reason="lost">r</supplied>um Aq<supplied reason="lost">uen</supplied>
+                    <lb n="2" break="no" facs="#zone_pgv_2hl_hhb"/>
+                    sium <expan facs="#zone_psf_wpz_bfb"><abbr>donaver</abbr><ex>unt</ex></expan> 
+                    <lb n="3" facs="#zone_sh5_fhl_hhb"/>
+                    lucum cum sua vi
+                    <lb n="4" break="no" facs="#zone_gkp_hhl_hhb"/>
+                    nea vicanis <expan><abbr>A
+                    <lb n="5" break="no" facs="#zone_err_3hl_hhb"/>
+                    quens</abbr><ex>ibus</ex></expan> ad ludos 
+                    <lb n="6" facs="#zone_e2t_jhl_hhb"/>
+                    <expan><abbr>celebrand</abbr><ex>os</ex></expan> pro 
+                    <lb n="7" facs="#zone_a3c_lhl_hhb"/>
+                    salute <expan><abbr>Imp</abbr><ex>eratoris</ex></expan><expan><abbr> Aug</abbr><ex>usti</ex></expan> 
+                    <lb n="8" facs="#zone_acl_mhl_hhb"/>
+                    <persName nymRef="#pers1"><name type="praenomen">Zmertuccius</name><name type="cognomen"> Ti
+                    <lb n="9" break="no" facs="#zone_nlj_nhl_hhb"/>
+                    tianus</name></persName><expan><abbr> p</abbr><ex>atronus</ex></expan><placeName nymRef="#Aix-les-Bains"><expan><abbr> v</abbr><ex>ici</ex></expan></placeName> aram 
+                    <lb n="10" facs="#zone_a4r_4hl_hhb"/>
+　　　　　　　　　　<expan><abbr>D</abbr><ex>e</ex></expan> <expan><abbr> S</abbr><ex>ua</ex></expan> <expan><abbr> D</abbr><ex>edit</ex></expan>
+                </ab>
+            </div>
+            <div type="apparatus">
+                <p>external apparatus criticus (if applicable)</p>
+            </div>
+            <div type="translation">
+                <p>translation(s)</p>
+            </div>
+            <div type="commentary">
+                <p>commentary</p>
+            </div>
+            <div type="bibliography">
+                <p>bibliography of previous editions, discussion, etc.</p>
+            </div>
+        </body>
+    </text>
+</TEI>
