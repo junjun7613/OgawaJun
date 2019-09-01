@@ -1,0 +1,7 @@
+$(body).on("click", "supplied", function(){
+var zoneId = $(this).attr("facs");
+var ulx = $(zoneId).attr("ulx");
+var uly = $(zoneId).attr("uly");
+
+ÅcÅc
+})

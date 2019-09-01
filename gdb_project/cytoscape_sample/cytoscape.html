@@ -1,0 +1,107 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <title>Tutorial 1: Getting Started</title>
+    <script src="./cytoscape.js/dist/cytoscape.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/neo4j-driver"></script>
+
+
+<style>
+    #cy {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+</style>
+</head>
+
+<body>
+    <div id="cy"></div>
+<script type="text/javascript" charset="utf-8">
+    neo4j = neo4j.v1;
+    var driver = neo4j.driver(
+        'bolt://localhost:7687',
+        neo4j.auth.basic('neo4j', 'caesar44310')
+    )
+
+    var session = driver.session()
+    var elements = {
+        nodes:[],
+        edges:[]
+    };
+
+    session
+        .run('MATCH (m)-[r]-(n) RETURN ID(m) as mid, m.name as mname, labels(m) as mlabel, type(r) as type, ID(n) as nid, n.name as nname, labels(n) as nlabel')
+        .subscribe({
+            onNext: function(record){
+                console.log("---")
+                console.log(record.get('mname'));
+                console.log(record.get('mid').toString());
+                console.log(record.get('mlabel'));
+                console.log(record.get('type'));
+                console.log(record.get('nname'));
+                console.log(record.get('nid').toString());
+                console.log(record.get('nlabel'));
+                elements.nodes.push({
+                    data: {id: record.get('mid').toString(), name: record.get('mname')}
+                })
+                elements.nodes.push({
+                    data: {id: record.get('nid').toString(), name: record.get('nname')}
+                })
+                elements.edges.push({
+                    data: {source: record.get('mid').toString(), target: record.get('nid').toString(), relationship: record.get('type')}
+                })
+
+    /*var style = [
+        {
+            selector: 'node[label = "Person"]',
+            css: {'background-color':'#6FB1FC', 'content':'data(name)'}
+        },
+        {
+            selector: 'edge',
+            css: {'content':'data(relationship)', 'target-arrow-shape':'triangle'}
+        }
+    ]*/
+    
+    var cy = cytoscape({
+    container: document.getElementById('cy'),
+    elements: elements
+});
+
+var stylesheet = [
+              //セレクターで拾いた内容要素が 指定したCSSを適用する
+              //ノードの中で、label属性は「Peson」のノードが青色で表示し、文字はname属性を表示する
+              { selector: 'node', 
+               style: {'background-color': 'red', 'content': 'data(name)'}
+              },
+              //エッジ全体で、文字はrelationship属性を表示する、終了点での矢印は三角形にする
+              { selector: 'edge', 
+               style: {'label': 'data(relationship)',
+                       'target-arrow-shape': 'square',
+                       'width': 1
+                       }
+              } 
+            ];
+
+cy.style(stylesheet).update();
+
+var layout = cy.layout({
+    name: 'circle'
+});
+layout.run();
+},
+onCompleted: function(){
+    session.close()
+driver.close()
+},
+onError: function(error){
+    console.log(error)
+}
+        })
+</script>
+</body>
+</html>

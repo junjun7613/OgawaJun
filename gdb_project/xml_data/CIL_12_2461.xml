@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.stoa.org/epidoc/schema/latest/tei-epidoc.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.stoa.org/epidoc/schema/latest/tei-epidoc.rng" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" xml:space="preserve" xml:lang="en">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>CIL 12, 2461</title>
+            </titleStmt>
+            <publicationStmt>
+                <authority/>
+                <idno type="filename"/>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <repository>museum/archive</repository>
+                        <idno>inventory number</idno>
+                    </msIdentifier>
+                    <physDesc>
+                        <objectDesc>
+                            <supportDesc>
+                                <support>
+                                    <objectType>Altar</objectType>
+                                    <material>lime stone</material>
+                                    <dimensions unit="cm">
+                                        <height/>
+                                        <width/>
+                                    </dimensions>
+                                </support>
+                            </supportDesc>
+                            <layoutDesc>
+                                <layout>description of text field/campus</layout>
+                            </layoutDesc>
+                        </objectDesc>
+                        <handDesc>
+                            <handNote>description of letters, possibly including <height>letter-heights</height>
+                            </handNote>
+                        </handDesc>
+                    </physDesc>
+                    <history>
+                        <origin>
+                            <origPlace>
+                                <placeName ref="#Aix-les-Bains">Aix-les-Bains</placeName>
+                            </origPlace>
+                            <origDate notBefore-custom="0150" notAfter-custom="0250"/>
+                        </origin>
+                        <provenance type="found">Aix-les-Bains</provenance>
+                        <provenance type="observed"/>
+                    </history>
+                </msDesc>
+                <xi:include href="personlist.xml"/>
+                <xi:include href="placelist.xml"/>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>     
+    <surface>
+    <graphic url="./pictures/CIL_12_2461.jpg"/>
+    <zone xml:id="zone_a3s_51s_53b" lry="270" lrx="196" uly="249" ulx="106"/>
+    <zone xml:id="zone_d1q_bbs_53b" lry="297" lrx="194" uly="276" ulx="27"/>
+    <zone xml:id="zone_w5x_cbs_53b" lry="327" lrx="148" uly="303" ulx="30"/>
+</surface>
+
+ 
+</facsimile>
+    <text>
+        <body>
+            <div type="edition" xml:space="preserve">
+                <ab type="A">
+                  <lb n="1"/>
+                    Aram <expan><abbr>deceml</abbr><ex>ecti</ex></expan>
+                  <lb n="2"/>
+                    Aquenses et pa 
+                  <lb n="3" break="no"/>
+                    troni de suo 
+                  <lb n="4"/>
+                    ob donum fig 
+                  <lb n="5"/>
+                    <expan><abbr>lin</abbr><ex>arum</ex></expan> quem LIV<gap reason="lost" unit="character" facs="#zone_a3s_51s_53b"/>
+                </ab>
+                <ab type="B">
+                    <lb n="1"/>
+                      <supplied reason="lost" facs="#zone_d1q_bbs_53b">possessoribus uici</supplied> 
+                    <lb n="2"/>
+                      <supplied reason="lost" facs="#zone_w5x_cbs_53b">Aqu</supplied>arum <gap reason="lost" unit="character"/> 
+                    <lb n="3"/>     
+                      et uicanis <expan><abbr>don</abbr><ex>auerunt</ex></expan> 
+                    <lb n="4"/>
+                      ad epulum la<supplied reason="lost">c</supplied> 
+                    <lb n="5"/>
+                      um cum suo 
+                    <lb n="6"/>
+                      fructu. 
+                    <lb n="7"/>
+                      Pat<unclear>roni</unclear> : <persName nymRef="#Rufius_Iulianus"><expan><abbr>Ruf</abbr><ex>ius</ex></expan> Iulianus</persName>, 
+                    <lb n="8"/>
+                      <persName nymRef="#Smerius_Masuetus"><expan><abbr>Smer</abbr><ex>ius</ex></expan> Masuetus</persName>.
+                </ab>
+                <ab type="C">
+                    <lb n="1"/>
+                      Dece 
+                    <lb n="2"/>
+                      mlecti : <persName nymRef="#Canius_Decimus"><expan><abbr>Can</abbr><ex>ius</ex></expan> Decimu<supplied reason="lost">s,</supplied></persName> 
+                    <lb n="3"/>
+                      <persName nymRef="#Titius_Hyginus">Titius Hyginus</persName>, <persName nymRef="#Tincius_Derco"><expan><abbr>Tinc</abbr><ex>ius</ex></expan> De<supplied reason="lost">r</supplied> 
+                    <lb n="4" break="no"/>
+                      co</persName>, <persName nymRef="#Iulius_Spinter"><expan><abbr>Iul</abbr><ex>ius</ex></expan> Spinter</persName>, <persName nymRef="#Smerius_Licinianus"><expan><abbr>Smer</abbr><ex>ius</ex></expan> L<supplied reason="lost">i</supplied> 
+                    <lb n="5" break="no"/>
+                      cinianus</persName>, <persName nymRef="#Ramanius_Valerius">Rom<unclear>anius</unclear> Valerius</persName>,
+                    <lb n="6"/>
+                      <persName nymRef="#Cacusius_Decimianus">Cac<unclear>usius</unclear> Decimianus</persName>, <persName nymRef="#Aelius_Decumanus">Ael<unclear>ius </unclear>
+                    <lb n="7"/>
+                      <supplied reason="lost">D</supplied>ecumanus</persName>, <expan><abbr>Sol</abbr><ex>lius</ex></expan> Se<gap reason="lost" unit="character"/> 
+                    <lb n="8"/>  
+                      <gap reason="lost" unit="character"/>ius R<gap reason="lost" unit="character"/>
+                </ab>
+            </div>
+            <div type="apparatus">
+                <p></p>
+            </div>
+            <div type="translation">
+                <p></p>
+            </div>
+            <div type="commentary">
+                <p></p>
+            </div>
+            <div type="bibliography">
+                <p></p>
+            </div>
+        </body>
+    </text>
+</TEI>

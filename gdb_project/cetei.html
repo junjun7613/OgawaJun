@@ -1,0 +1,255 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="CETEIcean.css" media="screen" charset="utf-8">
+  <link rel="stylesheet" href="sample.css" media="screen" charset="utf-8">
+  <script type="text/javascript"
+    src="http://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js" charset="UTF-8"></script>
+  <script src="./openseadragon-bin-2.4.0/openseadragon.min.js"></script>
+  <script src="./openseadragon-bin-2.4.0/openseadragon.js"></script>
+  <script src="./cytoscape_sample/cytoscape.js/dist/cytoscape.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/neo4j-driver"></script>
+
+  <style>
+    tei-persname {
+      color: blue;
+    }
+
+    tei-placename {
+      color: green;
+    }
+
+    tei-supplied {
+      background-color: rgba(255, 0, 0, 0.3);
+    }
+    
+  </style>
+</head>
+
+<body>
+  <div id="TEI">
+    Sadly, this page will not work in Internet Explorer and some older browsers. We suggest you use a newer version of
+    Chrome or Firefox.
+  </div>
+  <!--<div id="cy" style="width:600px; height:300px;"></div>-->
+  <div id="seadragon-viewer" style="width:600px; height:300px;"></div>
+  
+  <script src="CETEI.js"></script>
+  <script src="jquery-3.4.1.min.js"></script>
+  <script>
+
+    var CETEIcean = new CETEI();
+
+    CETEIcean.addBehaviors({
+
+      handlers: {
+
+        
+        "supplied": function (el) {
+          el.onmouseover = function () {
+            var zId = el.getAttribute("facs");
+            var zoneId = zId.replace("#", "");
+            
+            var zone = document.getElementById(zoneId);
+            
+
+            var lry = parseInt(zone.getAttribute("lry"));
+            var lrx = parseInt(zone.getAttribute("lrx"));
+            var uly = parseInt(zone.getAttribute("uly"));
+            var ulx = parseInt(zone.getAttribute("ulx"));
+
+            var img = new Image;
+            img.src = image_url;
+            //img.onload = function(){
+              var img_width = img.width;
+              var img_height = img.height;
+            //}
+            console.log(img_width);
+            console.log(img_height);
+
+            var x = ulx / img_width.toFixed();
+            var y = (uly / img_width.toFixed());
+            var w = (lrx - ulx) / img_width.toFixed();
+            var h = (lry - uly) / img_width.toFixed();
+            console.log(x);
+            console.log(y);
+            console.log(w);
+            console.log(h);
+
+            var overlay = document.getElementById("example-overlay");
+            console.log(overlay);
+
+              if (overlay) {
+                viewer.removeOverlay("example-overlay");
+              }
+            
+              var elt = document.createElement("div");
+              elt.id = "example-overlay";
+              elt.className = "highlight";
+              viewer.addOverlay({
+                element: elt,
+                location: new OpenSeadragon.Rect(x, y, w, h)
+              });
+            
+          }
+        },
+
+        "persName": function (el) {
+
+el.onclick = function () {
+  
+//ここにグラフ表示のコードを記述
+neo4j = neo4j.v1;
+var driver = neo4j.driver(
+'bolt://localhost:7687',
+neo4j.auth.basic('neo4j', 'caesar44310')
+)
+
+var session = driver.session()
+var elements = {
+nodes:[],
+edges:[]
+};
+
+session
+.run('MATCH (m)-[r]-(n) RETURN ID(m) as mid, m.name as mname, labels(m) as mlabel, type(r) as type, ID(n) as nid, n.name as nname, labels(n) as nlabel')
+.subscribe({
+  onNext: function(record){
+      console.log("---")
+      console.log(record.get('mname'));
+      console.log(record.get('mid').toString());
+      console.log(record.get('mlabel'));
+      console.log(record.get('type'));
+      console.log(record.get('nname'));
+      console.log(record.get('nid').toString());
+      console.log(record.get('nlabel'));
+      elements.nodes.push({
+          data: {id: record.get('mid').toString(), name: record.get('mname')}
+      })
+      elements.nodes.push({
+          data: {id: record.get('nid').toString(), name: record.get('nname')}
+      })
+      elements.edges.push({
+          data: {source: record.get('mid').toString(), target: record.get('nid').toString(), relationship: record.get('type')}
+      })
+
+/*var style = [
+{
+  selector: 'node[label = "Person"]',
+  css: {'background-color':'#6FB1FC', 'content':'data(name)'}
+},
+{
+  selector: 'edge',
+  css: {'content':'data(relationship)', 'target-arrow-shape':'triangle'}
+}
+]*/
+
+var cy = cytoscape({
+//container: document.getElementById('cy'),
+container: document.getElementById('cy'),
+elements: elements
+});
+
+var stylesheet = [
+    //セレクターで拾いた内容要素が 指定したCSSを適用する
+    //ノードの中で、label属性は「Peson」のノードが青色で表示し、文字はname属性を表示する
+    { selector: 'node', 
+     style: {'background-color': 'red', 'content': 'data(name)'}
+    },
+    //エッジ全体で、文字はrelationship属性を表示する、終了点での矢印は三角形にする
+    { selector: 'edge', 
+     style: {'label': 'data(relationship)',
+             'target-arrow-shape': 'square',
+             'width': 1
+             }
+    } 
+  ];
+
+cy.style(stylesheet).update();
+
+var layout = cy.layout({
+name: 'circle'
+});
+layout.run();
+},
+onCompleted: function(){
+session.close()
+driver.close()
+},
+onError: function(error){
+console.log(error)
+}
+})
+};
+
+},
+
+        "placeName": function (el) {
+          el.onclick = function () {alert();};
+        }
+
+      }
+
+    })
+    image_url = "";
+    CETEIcean.getHTML5('./xml_data/CIL_12_2461.xml', function (data) {
+      image_url = data.getElementsByTagName("tei-graphic")[0].getAttribute("url");
+      console.log(image_url);
+      /*text_data = data.getElementsByTagName("tei-text")[0];*/
+      document.getElementById("TEI").innerHTML = "";
+      document.getElementById("TEI").appendChild(data);
+      CETEIcean.addStyle(document, data);
+
+      /*var tei_persnames = $("tei-persname")
+            for (var i = 0; i < tei_persnames.length; i++) {
+              var tei_persname = $(tei_persnames[i])
+              tei_persname.attr("onclick", "alert(this); return false;")
+              tei_persname.attr("style", "curson: pointer;")
+      }
+      var tei_placenames = $("tei-placename")
+        for (var i = 0; i < tei_placenames.length; i ++){
+          var tei_placename = $(tei_placenames[i])
+          tei_placename.attr("onclick", "alert(this); return false;")
+      }*/
+
+    /*});*/
+
+
+    // Alternatively, use then()
+    // (new CETEI).getHTML5('.xml').then(function(data){
+    //   document.getElementById("TEI").appendChild(data);
+    // });
+
+    /*image_url = data.getElementByTagName("tei-graphic").attr("url");*/
+
+    
+
+    const viewer = new OpenSeadragon({
+      id: 'seadragon-viewer',
+      prefixUrl: "openseadragon-bin-2.4.0/images/",
+      tileSources: [{
+        type: 'image',
+        url: image_url,
+        buildPyramid: false,
+        overlays: [{
+          id: 'example-overlay',
+          x: 0.0,
+          y: 0.0,
+          width: 0.0,
+          height: 0.0,
+          className: 'highlight'
+        }],
+      }]
+    });
+
+    viewer.open;
+    window.viewer = viewer;
+
+  });
+    
+  </script>
+</body>
+
+</html>

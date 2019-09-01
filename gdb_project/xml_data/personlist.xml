@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<listPerson xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+   <xi:include href="placelist.xml"/>
+   <person xml:id="Zmertuccius_Titianus">
+      <persName><name type="gentilicium">Zmertuccius</name> <name type="cognomen">Titianus</name></persName>
+      <trait ana="#Aix-les-Bains" type="patron_of" subtype="plac"/>
+   </person>
+   <person xml:id="Zmertuccius_Titius">
+      <persName><name type="gentilicium">Zmertuccius</name> <name type="cognomen">Titius</name></persName>
+      <trait ana="#Zmertuccius_Titianus" type="SonOf" subtype="pers"/>
+      <trait ana="#Aix-les-Bains" type="magistrate_of" subtype="plac"/>
+   </person>
+   <person xml:id="C_Sennius_Sabinus">
+      <persName><name type="praenomen">Caius</name> <name type="gentilicium">Sennius</name> <name type="cognomen">Sabinus</name></persName>
+      <trait ana="#Albens" type="patron_of" subtype="plac"/>
+      <trait ana="#Geneve" type="patron_of" subtype="plac"/>
+      <trait ana="#Vienne" type="magistrate_of" subtype="plac"/>
+   </person>
+   <person xml:id="Rufius_Iulianus">
+      <persName><name type="gentilicium">Rufius</name> <name type="cognomen">Iulianus</name></persName>
+      <trait ana="#Aix-les-Bains" type="patron_of" subtype="plac"/>
+   </person>
+   <person xml:id="Smerius_Masuetus">
+      <persName><name type="gentilicium">Smerius</name> <name type="cognomen">Masuetus</name></persName>
+      <trait ana="#Aix-les-Bains" type="patron_of" subtype="plac"/>
+      <trait ana="#Smerius_Licinianus" type="KinOf" subtype="pers"/>
+   </person>
+   <person xml:id="Canius_Decimus">
+      <persName><name type="gentilicium">Canius</name> <name type="cognomen">Decimus</name></persName>
+      <trait ana="#Aix-les-Bains" type="magistrate_of" subtype="plac"/>
+   </person>
+   <person xml:id="Titius_Hyginus">
+      <persName><name type="gentilicium">Titius</name> <name type="cognomen">Hyginus</name></persName>
+      <trait ana="#Aix-les-Bains" type="magistrate_of" subtype="plac"/>
+   </person>
+   <person xml:id="Tincius_Derco">
+      <persName><name gentilicium>Tincius</name> <name cognomen>Derco</name></persName>
+      <trait ana="#Aix-les-Bains" type="magistrate_of" subtype="plac"/>
+   </person>
+   <person xml:id="Iulius_Spinter">
+      <persName><name gentilicium>Iulius</name> <name type="cognomen">Spinter</name></persName>
+      <trait ana="#Aix-les-Bains" type="magistrate_of" subtype="plac"/>
+   </person>
+   <person xml:id="Smerius_Licinianus">
+      <persName><name type="gentilicium">Smerius</name> <name cognomen>Licinianus</name></persName>
+      <trait ana="#Aix-les-Bains" type="magistrate_of" subtype="plac"/>
+         <trait ana="#Smerius_Masuetus" type="KinOf" subtype="pers"/>
+   </person>
+   <person xml:id="Romanius_Valerius">
+      <persName><name gentilicium>Romanius</name> <name type="cognomen">Valerius</name></persName>
+      <trait ana="#Aix-les-Bains" type="magistrate_of" subtype="plac"/>
+   </person>
+   <person xml:id="Cacusius_Decimianus">
+      <persName><name type="gentilicium">Cacusius</name> <name type="cognomen">Decimianus</name></persName>
+      <trait ana="#Aix-les-Bains" type="magistrate_of" subtype="plac"/>
+   </person>
+   <person xml:id="Aelius_Decumanus">
+      <persName><name type="gentilicium">Aelius</name> <name type="cognomen">Decumanus</name></persName>
+      <trait ana="#Aix-les-Bains" type="magistrate_of" subtype="plac"/>
+   </person> 
+</listPerson>

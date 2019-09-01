@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.stoa.org/epidoc/schema/latest/tei-epidoc.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.stoa.org/epidoc/schema/latest/tei-epidoc.rng" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" xml:space="preserve" xml:lang="en">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>AE 1934,165</title>
+            </titleStmt>
+            <publicationStmt>
+                <authority/>
+                <idno type="filename"/>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <repository>museum/archive</repository>
+                        <idno>inventory number</idno>
+                    </msIdentifier>
+                    <physDesc>
+                        <objectDesc>
+                            <supportDesc>
+                                <support>
+                                    <objectType>stone plate</objectType>
+                                    <material>marble</material>
+                                    <dimensions unit="cm">
+                                        <height>42.5</height>
+                                        <width>31.8</width>
+                                        <depth>18</depth>
+                                    </dimensions>
+                                </support>
+                            </supportDesc>
+                            <layoutDesc>
+                                <layout>description of text field/campus</layout>
+                            </layoutDesc>
+                        </objectDesc>
+                        <handDesc>
+                            <handNote>description of letters, possibly including <height>letter-heights</height>
+                            </handNote>
+                        </handDesc>
+                    </physDesc>
+                    <history>
+                        <origin>
+                            <origPlace>
+                                <placeName nymRef="#Aix-les-Bains">Aix-les-Bains</placeName>
+                            </origPlace>
+                            <origDate notBefore-custom="0150" notAfter-custom="0200"/>
+                        </origin>
+                        <provenance type="found"> Findspot and circumstances/context
+                        </provenance>
+                        <provenance type="observed">Modern location(s) (if different from repository, above)
+                        </provenance>
+                    </history>
+                </msDesc>
+                <xi:include href="personlist.xml"/>
+                <xi:include href="placelist.xml"/>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>   
+    <surface>
+    <graphic url="../pictures/AE_1934_165.jpg"/>
+    <zone xml:id="zone_zvy_t2s_53b" lry="65" lrx="267" uly="28" ulx="37"/>
+    <zone xml:id="zone_llt_52s_53b" lry="68" lrx="405" uly="28" ulx="278"/>
+</surface>
+
+    </facsimile>
+    <text>
+        <body>
+            <div type="edition" xml:space="preserve">
+                <ab>
+                    <lb n="1"/>
+                    <supplied reason="lost" facs="#zone_zvy_t2s_53b">decemlecti posse</supplied>sso<supplied reason="lost">r</supplied>um Aq<supplied reason="lost" facs="#zone_llt_52s_53b">uen</supplied>
+                    <lb n="2"/>
+                    sium <expan facs="#zone_psf_wpz_bfb"><abbr>donaver</abbr><ex>unt</ex></expan> 
+                    <lb n="3"/>
+                    lucum cum sua vi
+                    <lb n="4"/>
+                    nea vicanis <expan><abbr>A
+                    <lb n="5"/>
+                    quens</abbr><ex>ibus</ex></expan> ad ludos 
+                    <lb n="6"/>
+                    <expan><abbr>celebrand</abbr><ex>os</ex></expan> pro 
+                    <lb n="7"/>
+                    salute <expan><abbr>Imp</abbr><ex>eratoris</ex></expan><expan><abbr> Aug</abbr><ex>usti</ex></expan> 
+                    <lb n="8"/>
+                    <persName nymRef="#Zmertuccius_Titianus">Zmertuccius Ti
+                    <lb n="9" break="no"/>
+                    tianus</persName><expan><abbr> p</abbr><ex>atronus</ex></expan><placeName nymRef="#Aix-les-Bains"><expan><abbr> v</abbr><ex>ici</ex></expan></placeName> aram 
+                    <lb n="10"/>
+　　　　　　　　　　<expan><abbr>D</abbr><ex>e</ex></expan> <expan><abbr> S</abbr><ex>ua</ex></expan> <expan><abbr> D</abbr><ex>edit</ex></expan>
+                </ab>
+            </div>
+            <div type="apparatus">
+                <p></p>
+            </div>
+            <div type="translation">
+                <p></p>
+            </div>
+            <div type="commentary">
+                <p></p>
+            </div>
+            <div type="bibliography">
+                <p></p>
+            </div>
+        </body>
+    </text>
+</TEI>
